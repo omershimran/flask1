@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, flash, jsonify
 from flask_login import login_required, current_user
-from .models import Note
-from . import db
+from website.models import Note
+from website import db
 import json
 
 views = Blueprint('views', __name__)
@@ -15,7 +15,7 @@ def home():
         new_note = Note(data=data, user_id=current_user.id)
         db.session.add(new_note)
         db.session.commit()
-    return render_template("home.html", text="testing", user=current_user)
+    return render_template("home/home.html", text="testing", user=current_user)
 
 
 @views.route('/delete-note', methods=[ 'POST'])

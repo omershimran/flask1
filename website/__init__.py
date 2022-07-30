@@ -14,8 +14,8 @@ def create_app():
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = 0
     db.init_app(app)
 
-    from .views import views
-    from .auth import auth
+    from website.routes.views import views
+    from website.routes.auth import auth
 
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')

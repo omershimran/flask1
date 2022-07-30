@@ -1,9 +1,12 @@
 {% extends "base.html" %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/logins/login.css') }}">
+{% endblock %}
 {% block title %}Login{% endblock %}
 {% block content %}
 <form method="POST">
   <h3 align="center">Login</h3>
-  <div class="form-group">
+  <div class="form-group omerForm">
     <label for="email">Email Address</label>
     <input
       type="email"
